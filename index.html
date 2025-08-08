@@ -1,69 +1,138 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Login</tittle>
-        <style>
-            body {
-                font-family: ; Arial, Sans-Serif;
-                background-color: #90EE90 ;
-                margin: 0;
-                padding: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-            }
+<html lang="id">
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family:Times New Roman, Sans-Serif;
+            background-color: #E28EC5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             
-            .login-container {
-                background-color: white;
-                padding: 30px;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0.1);
-                width: 300px;
-                text-align: center;
-                
-            }
-            
-            h1 {
-                color: #333;
-                margin-bottom: 20px;
-            }
-            
-            input {
-                width: 100%;
-                padding: 10px;
-                margin: 10px 0;
-                border-radius: 5px;
-                border: 1px solid #ccc;
-                box-sizing: border-box;
-            }
-            
-            button {
-                width: 100%;
-                padding: 10px;
-                background-color: #4CAF50;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-            
-            button:hover {
-                background-color: #45a049;
-            }
-        </style>
-
-</head>
+        }
+        
+        .login-container {
+            background-color: #AD0274;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #020202;
+            margin-bottom: 20px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #A27C96;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        buttopn:hover {
+            background-color: black;
+        }
+    </style>
+<head>
 <body>
-          
-            <div claas="login-container">
-                <h1>Login</h1>
-                <from>
-                     <input type="text" placeholder="Masuk unsername" required /> 
-                     <input type="password" placeholder="Masukan password" required= />
-                     <button type="submit">login</button>
-                     <p>Belum punya akun? <a href="#">Daftar akun</a></p>
-                </form>
-             </div>
+        
+    <div class="login-container">
+        <h1>Login</h1>
+        <form>
+            <input type="text" placeholder="Masukan Username" required />
+            <input type="password" placeholder="Masukan Password" required />
+            <button type="submit">Login</button>
+            <p>Belum punya akun? <a href="#">Daftar akun</a></p>
+        </form>
+    </div>
+
 </body>
-<html>
+</html>
+
+ <div class="login-container" id="loginBox">
+     <h2>Login</h2>
+     <input type="text" id= "Username" placeholder="username" />
+     <input type="password" id="password" placeholder="password" />
+     <div id="errorMsg" class="error hidden"></div>
+     <button onclick="login()">Login</button>
+    </div>
+    
+    <div class="login-container hidden" id="welcomeBox">
+        <h2>Selamat Datang</h2>
+        <p id="welcomeUser"></p>
+        <button onclick="logout()">logout</button>
+    <div
+    
+    <script)
+     const user="admin";
+     const pass="123"
+     
+     if(localStorage.getltem("loginUser")) {
+      showWelcome(localStorage.getltem("loginUser));
+     }
+     
+     function login() {
+      const uname = document.getElemenByld("username").value.trim();
+      const pwd = document.getElementByld("password").value.trim();
+      const errorMsg = document.getElemenByld("errorMsg");
+      
+     if (!uname || !pwd) {
+      errorMsg.textContet = "Username atau password salah.";
+      errorMsg.classList.remove("hidden");
+     }
+    }
+    
+    function logout() {
+     localStorage.getElemen("loginUser");
+     document.getElemenByld("loginBox").classList.remove("hidden");
+     document.getElemenByld("welcomeBox").classList.add("hidden);
+     document.getElemenByld("errorMsg").classList.add("hidden");
+     document.getElemenByld("username").value = "";
+     document.getElemenByld("password").value = "";
+    }
+    
+    function showWelcome(name) {
+     Document.getElemenByld("loginBox").classList.add("hidden");
+     Document.getElemenByld("welcomeUser").textContent = `Halo,${name};
+     
+     
+     }
+    </script>
+    
+   </body>
+   </html>
+     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
